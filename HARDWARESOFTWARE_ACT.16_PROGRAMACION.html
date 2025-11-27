@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Innovaciones - Alondra Guadalupe Vazquez Perez</title>
+  <meta name="description" content="Portafolio de innovaciones de Hardware y Software - Alondra Guadalupe Vazquez Perez">
+  <style>
+    :root{
+      --accent:#0b74de;
+      --bg:#f6f9fc;
+      --card:#ffffff;
+      --muted:#60708a;
+      --accent-dark:#0a5fb4;
+      --radius:10px;
+    }
+    *{box-sizing:border-box;font-family:Inter, system-ui, Arial, sans-serif}
+    body{margin:0;background:var(--bg);color:#0b1a2b;line-height:1.45}
+    header{background:linear-gradient(90deg,var(--accent),#2aa0ff);color:white;padding:22px}
+    .container{max-width:1100px;margin:22px auto;padding:16px}
+    h1{margin:0;font-size:1.6rem}
+    p.lead{margin:6px 0 0;opacity:0.95}
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:18px}
+    @media(max-width:980px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(12,25,40,0.06)}
+    form label{display:block;font-weight:700;margin-top:10px}
+    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef7;margin-top:6px}
+    .subtitle{font-size:0.78rem;color:var(--muted);margin-top:4px}
+    button{background:var(--accent);color:white;border:0;padding:10px 14px;border-radius:8px;font-weight:700;cursor:pointer}
+    nav.topnav{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+    nav.topnav a{background:#eff8ff;color:var(--accent);padding:8px 10px;border-radius:8px;text-decoration:none;font-weight:700}
+    .hidden{display:none}
+    .innovation{margin-bottom:18px;padding:14px;border-left:5px solid var(--accent);border-radius:8px;background:linear-gradient(180deg,#fff,#fbfdff)}
+    .img-placeholder{width:100%;height:220px;background:linear-gradient(135deg,#e6f2ff,#ffffff);display:flex;align-items:center;justify-content:center;border-radius:8px;color:var(--accent-dark);font-weight:700}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{padding:8px;border:1px solid #eef6ff;text-align:left;font-size:0.95rem}
+    small.note{color:var(--muted)}
+    footer{padding:18px;text-align:center;color:var(--muted);font-size:0.9rem;margin-top:18px}
+    .top-right{display:flex;gap:8px;align-items:center}
+    .logout{background:#ff6b6b}
+    .anchor-link{float:right;font-size:0.85rem;color:var(--accent);text-decoration:none}
+    .help{font-size:0.9rem;color:var(--muted);margin-top:10px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+      <div>
+        <h1>Portafolio de Innovaciones</h1>
+        <p class="lead">Clase: Arquitectura de Computadoras — <strong>Alondra Guadalupe Vazquez Perez</strong></p>
+      </div>
+      <div class="top-right">
+        <div id="welcome" style="font-weight:700"></div>
+        <button id="btn-logout" class="logout hidden">Cerrar sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- AUTH FORMS -->
+    <section id="auth" class="card">
+      <div class="grid">
+        <div>
+          <h2>Registro</h2>
+          <form id="register-form">
+            <label>Nombre
+              <input id="r-name" type="text" required placeholder="Tu nombre completo">
+              <small class="subtitle">Alondra Guadalupe Vazquez Perez</small>
+            </label>
+
+            <label>Edad
+              <input id="r-age" type="number" min="1" required placeholder="Ej. 17">
+              <small class="subtitle">Alondra Guadalupe Vazquez Perez</small>
+            </label>
+
+            <label>Correo electrónico
+              <input id="r-email" type="email" required placeholder="correo@ejemplo.com">
+              <small class="subtitle">Alondra Guadalupe Vazquez Perez</small>
+            </label>
+
+            <label>Usuario
+              <input id="r-username" type="text" required placeholder="usuario123">
+              <small class="subtitle">Alondra Guadalupe Vazquez Perez</small>
+            </label>
+
+            <label>Contraseña
+              <input id="r-password" type="password" required placeholder="Contraseña segura">
+              <small class="subtitle">Alondra Guadalupe Vazquez Perez</small>
+            </label>
+
+            <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+              <button type="submit">Crear cuenta</button>
+              <div class="help">¿Ya tienes cuenta? <a href="#" id="show-login">Inicia sesión</a></div>
+            </div>
+          </form>
+        </div>
+
+        <aside class="card">
+          <h3>Iniciar sesión</h3>
+          <form id="login-form">
+            <label>Usuario
+              <input id="l-username" type="text" required placeholder="Tu usuario">
+              <small class="subtitle">Alondra Guadalupe Vazquez Perez</small>
+            </label>
+            <label>Contraseña
+              <input id="l-password" type="password" required placeholder="Contraseña">
+              <small class="subtitle">Alondra Guadalupe Vazquez Perez</small>
+            </label>
+
+            <div style="margin-top:12px">
+              <button type="submit">Entrar</button>
+              <div class="help">Si no tienes cuenta, completa el formulario de registro.</div>
+            </div>
+          </form>
+
+          <hr style="margin:12px 0">
+
+          <div>
+            <strong>Atajos</strong>
+            <nav class="topnav" aria-label="Navegación rápida">
+              <a href="#innov-1">Innovación 1</a>
+              <a href="#innov-2">Innovación 2</a>
+              <a href="#innov-3">Innovación 3</a>
+              <a href="#innov-4">Innovación 4</a>
+            </nav>
+            <p class="note">Sustituye las secciones de cada innovación con tus bocetos, modelos 3D e interfaz.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- DASHBOARD / CONTENT -->
+    <section id="dashboard" class="hidden">
+      <div class="card">
+        <h2>Mis Innovaciones</h2>
+        <p class="help">Haz clic en un atajo o baja hasta la innovación para ver detalles. Cada sección incluye: Boceto, Diseño 3D, Interfaz, Explicación técnica, Características de hardware y software.</p>
+      </div>
+
+      <!-- Innovation 1 -->
+      <article id="innov-1" class="card innovation">
+        <a class="anchor-link" href="#top">↑ Subir</a>
+        <h3>Innovación 1 — <span style="font-weight:600">Nombre del proyecto 1</span></h3>
+        <div class="img-placeholder">Boceto (sustituir por: <code>images/innov1-boceto.jpg</code>)</div>
+        <h4>Diseño 3D</h4>
+        <div class="img-placeholder">Captura modelo 3D (sustituir por: <code>images/innov1-3d.jpg</code>)</div>
+        <h4>Interfaz / Prototipo</h4>
+        <div class="img-placeholder">Pantalla o mockup (sustituir por: <code>images/innov1-ui.jpg</code>)</div>
+
+        <h4>Explicación</h4>
+        <p>Describe aquí la idea, el problema que resuelve y el flujo de uso. Ejemplo: "Este dispositivo facilita la medición automática de temperatura en entornos escolares mediante un sensor XYZ y una pequeña interfaz web." </p>
+
+        <h4>Características de Hardware</h4>
+        <table>
+          <thead><tr><th>Componente</th><th>Especificación</th></tr></thead>
+          <tbody>
+            <tr><td>Microcontrolador</td><td>Ej. Arduino Nano / ESP32</td></tr>
+            <tr><td>Sensor</td><td>Ej. Sensor de temperatura LM35</td></tr>
+            <tr><td>Fuente</td><td>5V DC / 1A</td></tr>
+          </tbody>
+        </table>
+
+        <h4>Características de Software</h4>
+        <table>
+          <thead><tr><th>Elemento</th><th>Descripción</th></tr></thead>
+          <tbody>
+            <tr><td>Lenguaje</td><td>Ej. C/C++ para microcontrolador</td></tr>
+            <tr><td>Interfaz</td><td>HTML/CSS/JS - página local o servidor ligero</td></tr>
+            <tr><td>Servicios</td><td>Registro de datos en CSV local o envío por HTTP</td></tr>
+          </tbody>
+        </table>
+
+        <p class="note">Consejo: Reemplaza cada contenedor <em>img-placeholder</em> por una etiqueta `<img src="images/archivo.jpg" alt="...">` para que se muestre tu imagen real.</p>
+      </article>
+
+      <!-- Innovation 2 -->
+      <article id="innov-2" class="card innovation">
+        <a class="anchor-link" href="#top">↑ Subir</a>
+        <h3>Innovación 2 — <span style="font-weight:600">Nombre del proyecto 2</span></h3>
+        <div class="img-placeholder">Boceto (sustituir por: <code>images/innov2-boceto.jpg</code>)</div>
+        <h4>Diseño 3D</h4>
+        <div class="img-placeholder">Captura modelo 3D (sustituir por: <code>images/innov2-3d.jpg</code>)</div>
+        <h4>Interfaz / Prototipo</h4>
+        <div class="img-placeholder">Pantalla o mockup (sustituir por: <code>images/innov2-ui.jpg</code>)</div>
+
+        <h4>Explicación</h4>
+        <p>Explica la arquitectura, cómo interactúan hardware y software, flujo de datos y diagrama lógico (puedes enlazar o insertar imágenes del diagrama).</p>
+
+        <h4>Características de Hardware</h4>
+        <table>
+          <tbody>
+            <tr><td>Placa</td><td>Ej. Raspberry Pi 4</td></tr>
+            <tr><td>Periféricos</td><td>Cámara, actuadores</td></tr>
+          </tbody>
+        </table>
+
+        <h4>Características de Software</h4>
+        <table>
+          <tbody>
+            <tr><td>Sistema operativo</td><td>Ej. Raspbian / Linux</td></tr>
+            <tr><td>Servicios</td><td>Python para lectura y servidor Flask</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <!-- Innovation 3 -->
+      <article id="innov-3" class="card innovation">
+        <a class="anchor-link" href="#top">↑ Subir</a>
+        <h3>Innovación 3 — <span style="font-weight:600">Nombre del proyecto 3</span></h3>
+        <div class="img-placeholder">Boceto (sustituir por: <code>images/innov3-boceto.jpg</code>)</div>
+        <h4>Diseño 3D</h4>
+        <div class="img-placeholder">Captura modelo 3D (sustituir por: <code>images/innov3-3d.jpg</code>)</div>
+        <h4>Interfaz / Prototipo</h4>
+        <div class="img-placeholder">Pantalla o mockup (sustituir por: <code>images/innov3-ui.jpg</code>)</div>
+
+        <h4>Explicación</h4>
+        <p>Incluye aquí la justificación, pruebas realizadas, resultados esperados y mejora frente a soluciones existentes.</p>
+
+        <h4>Características de Hardware</h4>
+        <table>
+          <tbody>
+            <tr><td>Materiales</td><td>PLA (impresión 3D), circuitos integrados</td></tr>
+            <tr><td>Conectividad</td><td>WiFi / Bluetooth</td></tr>
+          </tbody>
+        </table>
+
+        <h4>Características de Software</h4>
+        <table>
+          <tbody>
+            <tr><td>Frameworks</td><td>React (interfaz) / Node.js (API)</td></tr>
+            <tr><td>Base de datos</td><td>JSON local / SQLite</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <!-- Innovation 4 -->
+      <article id="innov-4" class="card innovation">
+        <a class="anchor-link" href="#top">↑ Subir</a>
+        <h3>Innovación 4 — <span style="font-weight:600">Nombre del proyecto 4</span></h3>
+        <div class="img-placeholder">Boceto (sustituir por: <code>images/innov4-boceto.jpg</code>)</div>
+        <h4>Diseño 3D</h4>
+        <div class="img-placeholder">Captura modelo 3D (sustituir por: <code>images/innov4-3d.jpg</code>)</div>
+        <h4>Interfaz / Prototipo</h4>
+        <div class="img-placeholder">Pantalla o mockup (sustituir por: <code>images/innov4-ui.jpg</code>)</div>
+
+        <h4>Explicación</h4>
+        <p>Describe pruebas de usuario, métricas y cómo se integra con otros sistemas (por ejemplo, IoT o plataformas web).</p>
+
+        <h4>Características de Hardware</h4>
+        <table>
+          <tbody>
+            <tr><td>Dimensiones</td><td>Ej. 120x80x40 mm</td></tr>
+            <tr><td>Entrada</td><td>Sensor táctil / Botón</td></tr>
+          </tbody>
+        </table>
+
+        <h4>Características de Software</h4>
+        <table>
+          <tbody>
+            <tr><td>Interfaces</td><td>API REST para integración</td></tr>
+            <tr><td>Versionado</td><td>Git y GitHub para control de versiones</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <!-- Footer help / instrucciones -->
+      <section class="card">
+        <h3>Instrucciones para terminar tu sitio</h3>
+        <ol>
+          <li>Sustituye cada bloque <code>div.img-placeholder</code> por: <br>
+            <code>&lt;img src="images/innov1-boceto.jpg" alt="Boceto Innovación 1" style="width:100%;border-radius:8px"&gt;</code>
+          </li>
+          <li>Añade tus archivos en una carpeta llamada <code>images/</code> junto a este <code>index.html</code>.</li>
+          <li>Si tienes modelos 3D, sube capturas o embed de Sketchfab (si quieres embeber, te doy el código).</li>
+          <li>Publica en GitHub Pages: crea repo (ej. <code>innovaciones-alondra</code>), sube <code>index.html</code> y <code>images/</code>, y en Settings → Pages activa la rama <code>main</code> y carpeta <code>/ (root)</code>.</li>
+        </ol>
+
+        <p class="note">¿Quieres que yo genere el ZIP con este HTML y ejemplo de imágenes? Dime y lo preparo.</p>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Hecho por <strong>Alondra Guadalupe Vazquez Perez</strong> — Clase: Arquitectura de Computadoras</div>
+  </footer>
+
+  <script>
+    // Simple client-side auth (localStorage)
+    const registerForm = document.getElementById('register-form');
+    const loginForm = document.getElementById('login-form');
+    const dashboard = document.getElementById('dashboard');
+    const welcome = document.getElementById('welcome');
+    const logoutBtn = document.getElementById('btn-logout');
+
+    function saveUser(user){
+      const users = JSON.parse(localStorage.getItem('users')||'[]');
+      users.push(user);
+      localStorage.setItem('users', JSON.stringify(users));
+    }
+    function findUser(username){
+      const users = JSON.parse(localStorage.getItem('users')||'[]');
+      return users.find(u=>u.username===username);
+    }
+
+    registerForm.addEventListener('submit', e=>{
+      e.preventDefault();
+      const user = {
+        name: document.getElementById('r-name').value.trim(),
+        age: document.getElementById('r-age').value.trim(),
+        email: document.getElementById('r-email').value.trim(),
+        username: document.getElementById('r-username').value.trim(),
+        password: document.getElementById('r-password').value
+      };
+      if(findUser(user.username)){
+        alert('El usuario ya existe. Elige otro nombre de usuario.');
+        return;
+      }
+      saveUser(user);
+      alert('Cuenta creada. Ahora inicia sesión.');
+      registerForm.reset();
+      // show login area
+    });
+
+    loginForm.addEventListener('submit', e=>{
+      e.preventDefault();
+      const username = document.getElementById('l-username').value.trim();
+      const password = document.getElementById('l-password').value;
+      const user = findUser(username);
+      if(!user || user.password !== password){
+        alert('Usuario o contraseña incorrectos.');
+        return;
+      }
+      localStorage.setItem('session', JSON.stringify({username: user.username, name: user.name}));
+      showDashboard();
+    });
+
+    function showDashboard(){
+      const session = JSON.parse(localStorage.getItem('session'));
+      if(!session) return;
+      document.getElementById('auth').classList.add('hidden');
+      dashboard.classList.remove('hidden');
+      welcome.textContent = 'Hola, ' + session.name;
+      logoutBtn.classList.remove('hidden');
+    }
+
+    logoutBtn.addEventListener('click', ()=>{
+      localStorage.removeItem('session');
+      // reload page to show forms
+      location.reload();
+    });
+
+    // On page load, check session
+    if(localStorage.getItem('session')) showDashboard();
+
+    // Link to show login if needed
+    document.getElementById('show-login').addEventListener('click', function(e){
+      e.preventDefault();
+      // Scroll to login form (it's inside aside)
+      const el = document.getElementById('login-form');
+      if(el) el.scrollIntoView({behavior:'smooth'});
+    });
+  </script>
+</body>
+</html>
+
